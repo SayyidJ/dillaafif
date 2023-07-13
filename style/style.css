@@ -32,6 +32,15 @@ body {
 }
 
 /* --------------- COVER start--------------------- */
+#cover {
+  height: 100%;
+  width: 100%;
+}
+
+#cover.deactive {
+  display: none;
+}
+
 .container#cover-bg {
   width: 100%;
   height: 100%;
@@ -81,6 +90,15 @@ body {
   transform: translateX(-50%);
 }
 
+#flutter-target {
+  /* position: relative; */
+  z-index: 999999;
+  /* top: -100%;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+}
+
 #kepada {
   font-size: clamp(14px, 3vw, 16px);
   text-align: center;
@@ -90,7 +108,7 @@ body {
   top: 75%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999;
+  z-index: 0;
   white-space: nowrap;
 }
 
