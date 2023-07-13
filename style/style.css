@@ -25,73 +25,33 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: "Fira Sans", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* --------------- COVER start--------------------- */
-
-.section#cover {
-  /* max-width: 450px; */
-  max-height: 100vh;
-}
-
-.section#cover.buka {
-  display: none;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100vh;
-  overflow: hidden;
-  /* max-width: 450px; */
-}
-
-.wrapper#cover-bg {
-  overflow: hidden;
-}
-
-.wrapper img#cover-bg {
-  height: 100%;
+.container#cover-bg {
   width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container#cover-bg img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -2;
 }
 
-.wrapper span {
-  font-family: "Sunsilk Regular";
-  color: white;
-  font-size: 2.5rem;
+.container#overlay {
   position: absolute;
-  white-space: nowrap;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.wrapper span#the-wedding-of {
-  top: 15%;
-  letter-spacing: 4px;
-}
-
-.wrapper span#nama-pengantin {
-  font-size: 4.5rem;
-  font-family: Rafaela Signature Regular;
-  top: 65%;
-}
-
-.wrapper#cover-bg:after {
-  padding: 0;
-  margin: 0;
+  top: 0;
   content: "";
-  z-index: -1;
-  /* max-width: 450px; */
   width: 100%;
   height: 100%;
-  position: absolute;
+  z-index: 0;
   background: linear-gradient(
     0deg,
     rgb(20, 12, 12),
@@ -99,26 +59,43 @@ body {
   );
 }
 
-.wrapper#cover-flower {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.container#the-wedding-of {
+  font-size: clamp(16px, 4vw, 24px);
   position: absolute;
-  top: 6%;
+  top: 20%;
   left: 50%;
-  min-width: 50px;
-  min-height: 50px;
-  height: 8%;
-  width: 8%;
-  overflow: hidden;
+  color: white;
+  transform: translateX(-50%);
+  letter-spacing: 5.5px;
+  white-space: nowrap;
+}
+
+.container#nama-pengantin {
+  position: absolute;
+  white-space: nowrap;
+  top: 60%;
+  left: 50%;
+  color: white;
+  font-family: Rafaela Signature Regular;
+  font-size: clamp(16px, 6vw, 48px);
   transform: translateX(-50%);
 }
 
-.wrapper#cover-flower img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+#kepada {
+  font-size: clamp(14px, 3vw, 16px);
+  text-align: center;
+  font-weight: bold;
+  color: gold;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  white-space: nowrap;
+}
+
+#kepada span {
+  font-size: clamp(16px, 4vw, 18px);
 }
 
 .btn {
@@ -141,86 +118,11 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font: 700 1rem consolas;
+  font-family: consolas;
+  font-weight: 700;
+  font-size: clamp(14px, 2vw, 16px);
   cursor: pointer;
   overflow: hidden;
-}
-
-.btn button span:nth-child(1) {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #171618, #ffffff);
-  animation: animate1 2s linear infinite;
-}
-
-@keyframes animate1 {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.btn button span:nth-child(2) {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 3px;
-  background: linear-gradient(to bottom, #171618, #ffffff);
-  animation: animate2 2s linear infinite;
-  animation-delay: 1s;
-}
-@keyframes animate2 {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-.btn button span:nth-child(3) {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to left, #171618, #ffffff);
-  animation: animate3 2s linear infinite;
-}
-
-@keyframes animate3 {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.btn button span:nth-child(4) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 3px;
-  background: linear-gradient(to top, #171618, #ffffff);
-  animation: animate4 2s linear infinite;
-  animation-delay: 1s;
-}
-
-@keyframes animate4 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
 }
 
 /* --------------- COVER End--------------------- */

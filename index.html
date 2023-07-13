@@ -35,32 +35,29 @@
 
     <script>
       // The value below is injected by flutter build, do not touch.
-      var serviceWorkerVersion = "3340177062";
+      var serviceWorkerVersion = "98930281";
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
-    <script src="script/viewport.js"></script>
+    <!-- <script src="script/viewport.js"></script> -->
   </head>
   <body>
-    <div class="section" id="cover">
-      <div class="wrapper" id="cover-bg">
-        <img src="img/cover.jpg" id="cover-bg" alt="cover_bg" />
-        <span id="the-wedding-of">The Wedding Of</span>
-        <span id="nama-pengantin">Dilla & Afif</span>
-      </div>
-      <div class="wrapper" id="cover-flower">
-        <img src="img/flower.png" alt="flower" />
-      </div>
-      <div class="btn">
-        <button id="btn" onclick="if(engine){engine.runApp();}" target="_blank">
-          <span> </span>
-          <span> </span>
-          <span> </span>
-          <span> </span>
-          Buka
-        </button>
-      </div>
+    <div class="container" id="cover-bg">
+      <img src="img/cover.jpg" alt="cover_bg" />
     </div>
+    <div class="container" id="overlay"></div>
+    <div class="container" id="the-wedding-of">.The Wedding Of.</div>
+    <div class="container" id="nama-pengantin">Dilla & Afif</div>
+
+    <div id="kepada">Kepada Yth. <br /><span>Bapak/Ibu/Sdr/i</span></div>
+    <div class="btn">
+      <button id="btn" onclick="if(engine){engine.runApp();}" target="_blank">
+        Buka
+      </button>
+    </div>
+
+    <!-- Tamu kepada -->
+    <script src="script/url_handler.js"></script>
     <script>
       let engine;
       window.addEventListener("load", function (ev) {
