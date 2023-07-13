@@ -42,32 +42,32 @@
     <!-- <script src="script/viewport.js"></script> -->
   </head>
   <body>
-    <div id="cover">
-      <div class="container" id="cover-bg">
-        <img src="img/cover.jpg" alt="cover_bg" />
-      </div>
-      <div class="container" id="overlay"></div>
-      <div class="container" id="the-wedding-of">.The Wedding Of.</div>
-      <div class="container" id="nama-pengantin">Dilla & Afif</div>
+    <!-- <div id="cover"> -->
+    <div class="container" id="cover-bg">
+      <img src="img/cover.jpg" alt="cover_bg" />
+    </div>
+    <div class="container" id="overlay"></div>
+    <div class="container" id="the-wedding-of">.The Wedding Of.</div>
+    <div class="container" id="nama-pengantin">Dilla & Afif</div>
 
-      <div id="kepada">Kepada Yth. <br /><span>Bapak/Ibu/Sdr/i</span></div>
-      <div class="btn">
-        <button
-          id="btn"
-          onclick="
+    <div id="kepada">Kepada Yth. <br /><span>Bapak/Ibu/Sdr/i</span></div>
+    <div class="btn">
+      <button
+        id="btn"
+        onclick="
           if(engine){
             engine.runApp();
             const cover = document.querySelector('#cover');
             cover.classList.toggle('deactive');
           }
           "
-          target="_blank"
-        >
-          Buka
-        </button>
-      </div>
+        target="_blank"
+      >
+        Buka
+      </button>
     </div>
-    <div id="flutter-target"></div>
+    <!-- </div> -->
+    <!-- <div id="flutter-target"></div> -->
 
     <!-- Tamu kepada -->
     <script src="script/url_handler.js"></script>
@@ -75,16 +75,15 @@
       let engine;
       window.addEventListener("load", function (ev) {
         var loading = document.querySelector("#btn");
-        let target = document.querySelector("#flutter-target");
+        // let target = document.querySelector("#flutter-target");
         loading.textContent = "Loading..";
         _flutter.loader.loadEntrypoint({
-          // serviceWorker: {
-          //   serviceWorkerVersion: serviceWorkerVersion,
-          // },
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
           onEntrypointLoaded: async function (engineInitializer) {
-            // engine = engineInitializer;
             let appRunner = await engineInitializer.initializeEngine({
-              hostElement: target,
+              // hostElement: target,
             });
             loading.textContent = "Buka Undangan";
             engine = appRunner;
